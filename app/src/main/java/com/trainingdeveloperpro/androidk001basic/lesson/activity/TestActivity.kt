@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import com.trainingdeveloperpro.androidk001basic.R
 import com.trainingdeveloperpro.androidk001basic.utils.DebugLog
 
+
+
 /**
  * https://developer.android.com/guide/components/activities.html?hl=vi
  * Tạo 1 file TestActivity.kt
@@ -13,9 +15,8 @@ import com.trainingdeveloperpro.androidk001basic.utils.DebugLog
  *
  * Bật Logcat để xem log chạy qua các hàm như thế nào
  * **/
-class TestActivity : AppCompatActivity(){
+class TestActivity : AppCompatActivity() {
 
-    private val TAG = TestActivity::class.java.simpleName
 
     /****
      * Được gọi khi Activity mới được tạo.
@@ -103,6 +104,34 @@ class TestActivity : AppCompatActivity(){
         super.onDestroy()
 
         DebugLog.logD(TAG, "onDestroy()")
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        // Lưu trạng thái của UI vào outState
+        // Bundle này sẽ chuyển đến hàm onCreate nếu như tiến trình bị killed and restarted
+        outState.putBoolean(BUNDLE_STATE_BOOLEAN, true)
+        outState.putString(BUNDLE_STATE_STRING, "Welcome back to Android")
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        // Restore UI state from the savedInstanceState.
+        // This bundle has also been passed to onCreate.
+        val myBoolean = savedInstanceState.getBoolean(BUNDLE_STATE_BOOLEAN)
+        DebugLog.logD(TAG, "My Boolean $myBoolean")
+
+        val myString = savedInstanceState.getString(BUNDLE_STATE_STRING)
+
+        DebugLog.logD(TAG, "My String $myString")
+    }
+
+    companion object {
+
+        private val TAG = TestActivity::class.java.simpleName
+
+        private const val BUNDLE_STATE_BOOLEAN = "BUNDLE_STATE_BOOLEAN"
+        private const val BUNDLE_STATE_STRING = "BUNDLE_STATE_STRING"
     }
 
 }
