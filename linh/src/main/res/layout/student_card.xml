@@ -23,7 +23,6 @@
                 android:layout_marginTop="@dimen/margin_student_card_text_view_name_top"
                 android:textSize="@dimen/text_size_student_card_name"
                 android:textStyle="bold"/>
-
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -32,7 +31,6 @@
                 app:layout_constraintTop_toBottomOf="@+id/text_view_student_name"
                 app:layout_constraintEnd_toEndOf="@+id/text_view_student_name"
                 android:textStyle="italic"/>
-
         <ImageView
                 android:layout_width="@dimen/width_student_card_image"
                 android:layout_height="@dimen/height_student_card_image"
@@ -46,7 +44,6 @@
                 android:layout_marginLeft="@dimen/margin_student_card_image_left"
                 android:layout_marginStart="@dimen/margin_student_card_image_start"
                 android:scaleType="fitCenter"/>
-
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

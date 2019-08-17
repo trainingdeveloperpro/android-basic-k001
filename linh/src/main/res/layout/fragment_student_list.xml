@@ -17,7 +17,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginBottom="@dimen/margin_fragment_student_list_recycler_view_bottom"
             app:layout_constraintBottom_toTopOf="@+id/button_student_list_add"/>
-
     <Button
             android:text="@string/student_list_fragment_delete_entry_button_text"
             android:layout_width="wrap_content"
