@@ -1,3 +1,11 @@
 <resources>
-    <string name="app_name">khanh</string>
+    <string name="app_name">Student List</string>
+    <string name="add_new">Add New Student</string>
+    <string name="name">Student Name</string>
+    <string name="age">Student Age</string>
+    <string name="telephone">Student Telephone</string>
+    <string name="add_button">ADD</string>
+    <string name="empty_not_save">To few argument to make new Student</string>
+    <string name="description_user_image">Avatar of Student</string>
+    <string name="description_delete_button">Delete this Student</string>
 </resources>
